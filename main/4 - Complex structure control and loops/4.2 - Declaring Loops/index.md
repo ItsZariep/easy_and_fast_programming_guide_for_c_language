@@ -1,0 +1,185 @@
+# 4.2 Declaring loops
+
+
+Loops allow programmers to execute a block of code multiple times without needing to write the same code repeatedly. The three primary types of loops in C are:
+
+- **for loop**
+- **while loop**
+- **do-while loop**
+
+Each of these loops serves different use cases and has specific syntax rules.
+
+### The `for` Loop
+
+The `for` loop is typically used when the number of iterations is known beforehand. It consists of three parts: initialization, condition, and increment/decrement.
+
+#### Syntax
+
+```c
+for (initialization; condition; increment) {
+    // Code to be executed
+}
+```
+
+#### Components
+
+- **Initialization**: This is executed once at the beginning of the loop. It usually involves declaring and initializing loop control variables.
+- **Condition**: Before each iteration, this expression is evaluated. If it evaluates to true (non-zero), the loop body executes; otherwise, the loop terminates.
+- **Increment/Decrement**: This expression updates the loop control variable at the end of each iteration.
+
+#### Example
+
+```c
+#include <stdio.h>
+
+int main() {
+    for (int i = 0; i < 5; i++) {
+        printf("Iteration %d\n", i);
+    }
+    return 0;
+}
+```
+
+**Output:**
+
+```
+Iteration 0
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+```
+
+### The `while` Loop
+
+The `while` loop is used when the number of iterations is not known in advance. The loop continues as long as the specified condition is true.
+
+#### Syntax
+
+```c
+while (condition) {
+    // Code to be executed
+}
+```
+
+#### Example
+
+```c
+#include <stdio.h>
+
+int main() {
+    int count = 0;
+    while (count < 5) {
+        printf("Count: %d\n", count);
+        count++;
+    }
+    return 0;
+}
+```
+
+**Output:**
+
+```
+Count: 0
+Count: 1
+Count: 2
+Count: 3
+Count: 4
+```
+
+### The `do-while` Loop
+
+The `do-while` loop is similar to the `while` loop, except that it guarantees at least one execution of the loop body since the condition is checked after the loop body.
+
+#### Syntax
+
+```c
+do {
+    // Code to be executed
+} while (condition);
+```
+
+#### Example
+
+```c
+#include <stdio.h>
+
+int main() {
+    int count = 0;
+    do {
+        printf("Count: %d\n", count);
+        count++;
+    } while (count < 5);
+    return 0;
+}
+```
+
+**Output:**
+
+```
+Count: 0
+Count: 1
+Count: 2
+Count: 3
+Count: 4
+```
+
+### Loop Control Statements
+
+In addition to the basic looping constructs, C provides several control statements to manipulate loop execution:
+
+- **`break`**: Terminates the loop immediately.
+  
+  ```c
+  for (int i = 0; i < 10; i++) {
+      if (i == 5) {
+          break; // exits loop when i is 5
+      }
+      printf("%d\n", i);
+  }
+  ```
+
+- **`continue`**: Skips the current iteration and moves to the next one.
+  
+  ```c
+  for (int i = 0; i < 10; i++) {
+      if (i % 2 == 0) {
+          continue; // skips even numbers
+      }
+      printf("%d\n", i);
+  }
+  ```
+
+###  Nesting Loops
+
+Loops can be nested within each other. However, care should be taken to manage performance and ensure that termination conditions are met to avoid infinite loops.
+
+#### Example of Nested Loops
+
+```c
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 3; i++) {
+        for (int j = 1; j <= 2; j++) {
+            printf("i: %d, j: %d\n", i, j);
+        }
+    }
+    return 0;
+}
+```
+
+**Output:**
+
+```
+i: 1, j: 1
+i: 1, j: 2
+i: 2, j: 1
+i: 2, j: 2
+i: 3, j: 1
+i: 3, j: 2
+```
+
+### Summary
+
+Loops are an essential feature that allow programmers to efficiently manage repetitive tasks. Understanding the syntax and structure of `for`, `while`, and `do-while` loops, along with loop control statements like `break` and `continue`, is vital for effective programming. Mastery of these concepts enables developers to write concise and efficient code.

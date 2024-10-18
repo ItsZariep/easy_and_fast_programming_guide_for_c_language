@@ -1,0 +1,151 @@
+# 3.1 - Using data types
+
+In C programming, **data types** are essential as they define the nature of the data that can be stored and manipulated within a program. Data types inform the compiler about how much memory to allocate, how to interpret the data, and how to perform operations on it. 
+
+### Fundamental Data Types
+
+Remembering "1.1 - Variables, data types, and arithmetic operators" C provides several fundamental data types:
+
+#### Basic Types
+
+- **`int`**: Represents integer numbers. The size is usually 4 bytes, but this can vary based on the architecture (16-bit, 32-bit, or 64-bit).
+- **`char`**: Represents single characters and is usually 1 byte. It can hold any member of the execution character set.
+- **`float`**: Represents single-precision floating-point numbers, typically using 4 bytes.
+- **`double`**: Represents double-precision floating-point numbers, usually occupying 8 bytes.
+- **`void`**: Represents the absence of type. This is typically used in function return types to indicate no return value.
+
+#### Modifiers
+
+Modifiers can be applied to the basic types to alter their size and sign:
+
+- **Signed and Unsigned**:
+  - **`signed`**: Can represent both negative and positive values. The default for `int` and `char` is signed.
+  - **`unsigned`**: Can only represent non-negative values, effectively doubling the maximum value that can be stored.
+  
+  For example:
+  - `unsigned int`: A non-negative integer.
+  - `signed int`: A character that can also be negative.
+  
+- **Short and Long**:
+  - **`short`**: Typically 2 bytes (on most systems), used for smaller integer values.
+  - **`long`**: Typically 4 bytes or more, used for larger integer values.
+  - **`long long`**: At least 8 bytes, used for even larger integer values.
+
+### Data Type Sizes
+
+The sizes of the basic data types can be checked using the `sizeof` operator, which returns the size in bytes. Here’s an example:
+
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Size of char: %zu bytes\n", sizeof(char));
+    printf("Size of int: %zu bytes\n", sizeof(int));
+    printf("Size of float: %zu bytes\n", sizeof(float));
+    printf("Size of double: %zu bytes\n", sizeof(double));
+    printf("Size of short: %zu bytes\n", sizeof(short));
+    printf("Size of long: %zu bytes\n", sizeof(long));
+    printf("Size of long long: %zu bytes\n", sizeof(long long));
+    return 0;
+}
+```
+
+### Enumerated Types
+
+C also provides **enumerated types** (using the `enum` keyword) to create user-defined data types. An enum allows the user to define a variable that can hold a set of predefined constants, improving code readability.
+
+```c
+enum Day { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };
+```
+
+###  Derived Data Types
+
+In addition to the fundamental data types, C supports **derived data types**, including:
+
+#### Arrays
+
+An array is a collection of elements of the same type. The size of an array must be specified at compile time.
+
+```c
+int numbers[5]; // Array of 5 integers
+```
+
+#### Structures
+
+A structure (`struct`) is a user-defined data type that groups related variables of different types under a single name.
+
+```c
+struct Person {
+    char name[50];
+    int age;
+    float height;
+};
+```
+
+#### Unions
+
+A union (`union`) allows storing different data types in the same memory location. Only one of the members can hold a value at any given time.
+
+```c
+union Data {
+    int i;
+    float f;
+    char c;
+};
+```
+
+#### Pointers
+
+A pointer is a variable that stores the address of another variable. Pointers are powerful in C as they allow for dynamic memory management and manipulation of arrays and functions.
+
+```c
+int *ptr; // Pointer to an integer
+```
+
+### Type Qualifiers
+
+C provides type qualifiers that further refine data types. The main type qualifiers are:
+
+- **`const`**: Indicates that the value of a variable cannot be changed after initialization.
+- **`volatile`**: Indicates that a variable may change unexpectedly (for example, in multi-threaded applications or hardware registers).
+
+Example:
+
+```c
+const int x = 10;  // x cannot be changed
+volatile int y;    // y can be modified unexpectedly
+```
+
+###  Type Casting
+
+C allows for type casting, which is converting a variable from one data type to another. This is particularly important when dealing with operations involving different data types.
+
+Example of explicit type casting:
+
+```c
+double num = 10.5;
+int converted_num = (int)num; // Converts double to int
+```
+
+###  Data Types in C17
+
+While C17 does not introduce any new data types, it refines and clarifies some aspects of previous standards. The following updates and clarifications are relevant:
+
+- **Static Assertions**: The C17 standard introduces `_Static_assert` for compile-time assertions, allowing developers to enforce certain conditions on types.
+
+```c
+_Static_assert(sizeof(int) == 4, "Integers must be 4 bytes");
+```
+
+- **Improved Support for Multithreading**: C17 enhances the language's support for concurrent programming, which can influence how data types and structures are designed and used.
+
+### Best Practices for Using Data Types
+
+1. **Choose the Right Type**: Select the most appropriate data type for your variable. Use `int` for integers, `float` for decimal numbers, and `char` for single characters.
+2. **Use `const` When Possible**: If a variable's value should not change, declare it as `const` to avoid accidental modifications.
+3. **Avoid Implicit Type Conversions**: Be careful with implicit conversions, especially between signed and unsigned types, to avoid unexpected results.
+4. **Consider Memory Usage**: Be aware of the size and memory usage of different data types, especially when dealing with large data structures or arrays.
+
+### Summary
+
+Understanding and using data types in C is fundamental for effective programming. C17 maintains the robust data type system of C while introducing clarifications and enhancements. By leveraging the various data types, developers can create efficient, readable, and maintainable code.

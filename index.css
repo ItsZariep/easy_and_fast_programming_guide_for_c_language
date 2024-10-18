@@ -1,0 +1,23 @@
+.wikilist ul
+{list-style-type: none;padding: 0;}
+.wikilist li
+{margin: 10px 0;}
+.wikilist li li 
+{margin-left: 20px;}
+.wikilist li li::before
+{content: "\2022";color: #fff;display: inline-block;width: 16px;}
+.wikilist a
+{text-decoration: none;color: #43a64f;font-weight: bold;}
+
+.sidewiki
+{width: 15%;padding: 20px;border-radius: 16px;text-align: left;}
+ul
+{list-style-type: none;padding: 0;}
+ li
+{margin: 10px 0;}
+ li li::before
+{content: "\2022";color: #fff;display: inline-block;width: 16px;}
+li li 
+{margin-left: 20px;}
+ a
+{text-decoration: none;color: #43a64f;font-weight: bold;}

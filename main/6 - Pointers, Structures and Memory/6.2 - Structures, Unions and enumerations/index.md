@@ -1,0 +1,214 @@
+# 6.2 Structures, Unions and enumerations
+
+In C, **structures**, **unions**, and **enumerations** are powerful constructs used for defining custom data types. These constructs allow the programmer to group related data and assign meaningful names, making code easier to manage, modular, and scalable. Let's explore each one in detail:
+
+## **Structures (`struct`)**
+A **structure** in C is a user-defined data type that allows the grouping of variables (called members) of different types under a single name. Structures are often used to represent complex data, such as records, configurations, or multiple properties related to an entity.
+
+### **Syntax**
+```c
+struct StructureName {
+    dataType1 member1;
+    dataType2 member2;
+    // more members can be added
+};
+```
+
+### **Key Points**
+- **Members of a structure** can have different data types.
+- The structure itself occupies memory that is at least the sum of its members' sizes (with potential padding for alignment).
+- The individual members are accessed using the **dot (`.`)** operator.
+
+### **Example**
+```c
+#include <stdio.h>
+
+struct Employee {
+    int id;
+    char name[50];
+    float salary;
+};
+
+int main() {
+    struct Employee emp1;
+
+    emp1.id = 101;
+    strcpy(emp1.name, "John Doe");
+    emp1.salary = 50000.00;
+
+    printf("Employee ID: %d\n", emp1.id);
+    printf("Employee Name: %s\n", emp1.name);
+    printf("Employee Salary: %.2f\n", emp1.salary);
+
+    return 0;
+}
+```
+
+In this example:
+- `struct Employee` defines a structure with an `id`, `name`, and `salary`.
+- Members are accessed using the dot operator, e.g., `emp1.id`.
+
+### **Memory Layout**
+The memory layout of a structure may include padding between members due to **alignment requirements** of the machine. For instance, a `char` is typically aligned on a 1-byte boundary, but `int` may be aligned on a 4-byte boundary, which may introduce gaps (padding).
+
+### **Structure Padding**
+- Padding helps maintain alignment but can increase memory usage.
+- Compilers may introduce padding between structure members to ensure that each member is placed at an address that is optimal for performance (aligned correctly).
+
+
+### **Flexible sized storage**
+- **Flexible Array Members**: A structure's last member can be an incomplete array (size 0) to allow for flexible-sized storage.
+
+## **Unions (`union`)**
+A **union** is a user-defined data type in C that allows storing different data types in the same memory location. Unlike structures, where each member has its own memory space, all members of a union **share the same memory**. Thus, a union can hold only one of its members at any given time.
+
+### **Syntax**
+```c
+union UnionName {
+    dataType1 member1;
+    dataType2 member2;
+    // more members can be added
+};
+```
+
+### **Key Points**
+- All members of the union share the same memory block.
+- The size of the union is determined by the size of its largest member.
+- **Only one member can be used at a time**; writing to one member overwrites the other.
+- Members of the union are accessed using the dot (`.`) operator like structures.
+
+### **Example**
+```c
+#include <stdio.h>
+
+union Data {
+    int i;
+    float f;
+    char str[20];
+};
+
+int main() {
+    union Data data;
+
+    data.i = 10;
+    printf("data.i : %d\n", data.i);
+
+    data.f = 220.5;
+    printf("data.f : %.2f\n", data.f);
+
+    strcpy(data.str, "C Programming");
+    printf("data.str : %s\n", data.str);
+
+    return 0;
+}
+```
+
+In this example:
+- `data.i`, `data.f`, and `data.str` share the same memory.
+- Assigning a new value to one member overwrites the previous one.
+- If you assign a float to `data.f`, it overwrites the integer stored in `data.i`.
+
+### **Memory Layout**
+- In a union, the memory allocated is equal to the size of its largest member. For instance, if a union contains an `int` (4 bytes), a `double` (8 bytes), and a `char` array of 20 bytes, the union will allocate 20 bytes (the largest of its members).
+  
+### **Use Cases**
+- Unions are often used in scenarios where variables may represent different types but only one at a time (e.g., type systems, memory-efficient configurations).
+- Useful in low-level programming, such as device drivers or memory-mapped hardware registers.
+
+## **Enumerations (`enum`)**
+An **enumeration** is a user-defined data type in C that consists of integral constants. Enumerations provide a way to name a set of integer values, improving code readability and maintainability.
+
+### **Syntax**
+```c
+enum EnumName {
+    CONST1,    // automatically assigned 0
+    CONST2,    // automatically assigned 1
+    CONST3 = 5, // manually assigned 5
+    CONST4     // automatically assigned 6
+};
+```
+
+### **Key Points**
+- By default, the first enumerator is assigned the value 0, and each subsequent enumerator is incremented by 1.
+- You can manually assign specific values to the constants.
+- Enumerations are treated as **integer constants** in C.
+- Useful for defining sets of related constants, such as days of the week or error codes.
+
+### **Example**
+```c
+#include <stdio.h>
+
+enum Weekday { 
+    SUNDAY, 
+    MONDAY, 
+    TUESDAY, 
+    WEDNESDAY, 
+    THURSDAY, 
+    FRIDAY, 
+    SATURDAY 
+};
+
+int main() {
+    enum Weekday today;
+    today = WEDNESDAY;
+
+    if (today == WEDNESDAY) {
+        printf("It's the middle of the week.\n");
+    }
+
+    return 0;
+}
+```
+
+In this example:
+- The `Weekday` enumeration defines the seven days of the week as constants.
+- By default, `SUNDAY` is assigned 0, `MONDAY` is assigned 1, and so on.
+
+### **Memory Considerations**
+- Enumerations typically consume the same memory size as an integer, but in some cases, their size can vary depending on the architecture or compiler optimizations.
+  
+### **Scoped Enumerations in C17**
+C17 does not introduce scoped enumerations like C++ (with `enum class`), but you can still use enumerations safely by treating them as constants. However, type-safe enumerations as seen in C++ are not available in C, meaning an `enum` in C is still essentially an `int` with defined values.
+
+## **Differences Between Structures, Unions, and Enumerations**
+1. **Structures**:
+   - Can contain members of different types.
+   - All members have separate memory locations.
+   - Used when you need to group different data types together but retain access to all members simultaneously.
+
+2. **Unions**:
+   - Can contain members of different types, but only one member can hold a value at a time.
+   - All members share the same memory.
+   - Useful when only one type of data will be used at a time, reducing memory usage.
+
+3. **Enumerations**:
+   - Contains a set of named integral constants.
+   - Enumerations do not store data but provide meaningful names for sets of integer constants.
+   - Used to define a fixed range of possible values, improving code readability and type safety.
+
+### **Advanced Features in C17 Related to These Constructs**
+
+#### **Type Qualifiers**
+C17 allows using qualifiers like `const`, `volatile`, or `_Atomic` with structures and unions. For instance, you can define atomic structures or unions to guarantee atomic access to their members in a concurrent program.
+
+#### **Anonymous Structs and Unions**
+- In C17, you can declare anonymous structures or unions inside other structures. This allows members to be directly accessed without using an additional member name.
+  
+```c
+struct {
+    union {
+        int intVal;
+        float floatVal;
+    }; // anonymous union
+    char name[20];
+} data;
+
+data.intVal = 42;  // direct access to union member
+```
+
+### **Summary**
+- **Structures** group different data types together, providing a way to bundle related information.
+- **Unions** are more memory-efficient but allow only one member to hold a value at a time.
+- **Enumerations** are integer constants that provide meaningful names to numeric values, enhancing code clarity.
+  
+These constructs are fundamental in C programming, providing versatility in organizing and managing data in complex applications.

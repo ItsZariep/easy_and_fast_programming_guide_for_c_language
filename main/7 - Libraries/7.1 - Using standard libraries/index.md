@@ -1,0 +1,189 @@
+# 7.1 - Using standard libraries
+
+One of the key aspects of using C,is effectively utilizing the standard library, which provides a rich set of built-in functions and tools that improve efficiency, readability, and maintainability of code.
+
+> [!NOTE]
+> Standard libraries (such as stdio.h, stdlib.h, or stdarg.h) are provided by the operating system implementation.
+
+## **Introduction to Standard Libraries in C**
+C’s standard library is a collection of headers and functions that provide fundamental facilities like input/output, memory management, string manipulation, and mathematical computations. These libraries help developers avoid "reinventing the wheel" by providing tested and optimized code for common tasks.
+
+Some standard libraries include:
+
+- **stdio.h**: Input and output operations (e.g., `printf`, `scanf`, `fopen`)
+- **stdlib.h**: Memory allocation, random number generation, and system commands (e.g., `malloc`, `free`, `rand`)
+- **string.h**: String manipulation functions (e.g., `strcpy`, `strlen`, `memcmp`)
+- **math.h**: Mathematical computations (e.g., `sqrt`, `sin`, `cos`)
+- **time.h**: Time and date functions (e.g., `time`, `clock`, `strftime`)
+- **ctype.h**: Character classification and conversion (e.g., `isalpha`, `toupper`)
+  
+## **Using Standard Libraries**
+
+To use standard library functions you need to include the appropriate header files in your program. The header file declares the prototypes for the functions, while the library itself is linked during the compilation process.
+
+Example of including a header and using a function:
+
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Hello, C17 Standard Libraries!\n");
+    return 0;
+}
+```
+
+In this example, the `stdio.h` header is included, which gives access to the `printf()` function for printing to the console.
+
+## **Important Standard Libraries and Their Usage**
+
+Let’s dive deeper into some of the most commonly used standard libraries in C.
+
+###  **<stdio.h>** – Standard Input and Output
+This library handles input and output operations, such as reading and writing to the console, files, etc.
+
+- **`printf()`**: Outputs formatted text to the console.
+- **`scanf()`**: Reads formatted input from the console.
+- **`fopen()`**: Opens a file for reading or writing.
+- **`fclose()`**: Closes a file.
+
+Example:
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *file = fopen("test.txt", "w");
+    if (file == NULL) {
+        printf("Error opening file!\n");
+        return 1;
+    }
+    fprintf(file, "Writing to a file using C17!\n");
+    fclose(file);
+    return 0;
+}
+```
+
+###  **<stdlib.h>** – Standard Utility Functions
+This library provides a wide range of utility functions, including memory management, random number generation, program control, and more.
+
+- **`malloc()`**: Allocates dynamic memory.
+- **`free()`**: Frees dynamically allocated memory.
+- **`rand()`**: Generates random numbers.
+- **`exit()`**: Terminates a program.
+
+Example:
+```c
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+    int *ptr = (int *)malloc(10 * sizeof(int));  // Allocating memory for 10 integers
+    if (ptr == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1;
+    }
+
+    for (int i = 0; i < 10; i++) {
+        ptr[i] = rand() % 100;  // Assign random values
+        printf("%d ", ptr[i]);
+    }
+
+    free(ptr);  // Free allocated memory
+    return 0;
+}
+```
+
+###  **<string.h>** – String Manipulation
+This library provides functions for manipulating C-style strings (`char[]`), such as copying, comparing, and searching.
+
+- **`strcpy()`**: Copies a string.
+- **`strlen()`**: Returns the length of a string.
+- **`strcmp()`**: Compares two strings.
+
+Example:
+```c
+#include <string.h>
+#include <stdio.h>
+
+int main() {
+    char src[] = "Hello, C17!";
+    char dest[20];
+
+    strcpy(dest, src);  // Copy string src to dest
+    printf("Copied string: %s\n", dest);
+    return 0;
+}
+```
+
+### **<math.h>** – Mathematical Functions
+The `math.h` library provides standard mathematical functions like trigonometry, exponentiation, and logarithms.
+
+- **`sqrt()`**: Calculates the square root of a number.
+- **`sin()`, `cos()`**: Trigonometric functions.
+- **`pow()`**: Computes the power of a number.
+
+Example:
+```c
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+    double x = 9.0;
+    double result = sqrt(x);  // Calculate square root
+    printf("The square root of %.2f is %.2f\n", x, result);
+    return 0;
+}
+```
+
+### **<time.h>** – Time and Date Manipulation
+This library provides functionality to work with time and dates, including measuring elapsed time or formatting date strings.
+
+- **`time()`**: Returns the current time.
+- **`clock()`**: Returns the processor time consumed by the program.
+- **`strftime()`**: Formats date and time strings.
+
+Example:
+```c
+#include <time.h>
+#include <stdio.h>
+
+int main() {
+    time_t now;
+    time(&now);  // Get the current time
+    printf("Current time: %s", ctime(&now));  // Print formatted time
+    return 0;
+}
+```
+
+### **<ctype.h>** – Character Handling
+This library provides functions for character classification and conversion.
+
+- **`isalpha()`**: Checks if a character is alphabetic.
+- **`isdigit()`**: Checks if a character is a digit.
+- **`toupper()`**: Converts a character to uppercase.
+
+Example:
+```c
+#include <ctype.h>
+#include <stdio.h>
+
+int main() {
+    char c = 'a';
+
+    if (isalpha(c)) {
+        printf("%c is an alphabetic character.\n", c);
+    }
+    printf("Uppercase of %c is %c\n", c, toupper(c));
+    return 0;
+}
+```
+
+## **Benefits of Using Standard Libraries**
+
+- **Efficiency**: Standard libraries are optimized for performance, ensuring that the most common operations are carried out as efficiently as possible.
+- **Portability**: Since the standard library is available on all C-compatible platforms, using these libraries makes your code better portable.
+- **Reliability**: The functions in the standard library are well-tested, minimizing the chances of bugs in your code when you use them.
+- **Ease of Use**: The functions provided by the standard library are high-level abstractions of common tasks, reducing the amount of code you need to write from scratch.
+
+## **Conclusion**
+
+The standard libraries are essential tools for any C programmer. By leveraging these libraries, you can write more efficient, portable, and maintainable code. They cover a wide range of functionality, from input/output operations and memory management to mathematical computations and string manipulation. As a developer, understanding and using these libraries allows you to focus more on the logic of your application rather than reimplementing basic operations.

@@ -1,0 +1,183 @@
+# 1.1 - Variables, data types, and arithmetic operators
+
+A variable in C is a named storage location in memory where data is stored. Each variable has a specific data type that determines the kind of values it can hold and how much memory it occupies.
+
+Variables in C must be declared before use. Declaration specifies the variable's name and its data type. Optionally, the variable can be initialized during declaration.
+
+**Syntax:**
+```c
+data_type variable_name [= initial_value];
+```
+
+**Examples:**
+```c
+int age;             // Declaration of an integer variable
+float salary = 4500; // Declaration and initialization of a float variable
+char letter = 'A';   // Declaration and initialization of a char variable
+```
+
+Initialization is the process of assigning a value to a variable when it is declared. If a variable is not initialized, it contains garbage values.
+
+```c
+int num = 10;  // Initialized variable
+int uninitialized_var; // This contains a random (garbage) value, can be initalizated later
+```
+
+Variables are categorized based on their scope and lifetime within the program. Understanding the different types of variables is essential for efficient memory management and code behavior. Here are the three primary types of variables:
+
+1. **Local Variables**: 
+   - Declared inside a function or block, and accessible only within that specific scope.
+   - These variables are created when the function is called and destroyed once the function execution is completed.
+   - **Use case**: Ideal for temporary storage or computations within a specific task.
+   
+2. **Global Variables**: 
+   - Declared outside of all functions and accessible throughout the entire program.
+   - These variables exist for the lifetime of the program and can be modified by any part of the code.
+   - **Use case**: Useful for data that needs to be shared or accessed by multiple functions.
+
+3. **Static Variables**: 
+   - Declared inside a function, but unlike local variables, they retain their value across multiple function calls.
+   - Their scope is limited to the function/block in which they are declared, but their lifespan extends beyond a single function call.
+   - **Use case**: Suitable for preserving state information between function invocations.
+
+
+| **Variable Type** | **Declaration Example** | **Declaration Location**                          |
+|-------------------|-------------------------|---------------------------------------------------|
+| **Local**         | `int myvar;`             | Inside a function (e.g., `void dosomething() { }`)|
+| **Global**        | `int myvar;`             | Outside all functions (e.g., in a header file or at the top of the file) |
+| **Static**        | `static int myvar;`      | Inside a function or block but retains value between calls |
+
+## **Data Types**
+
+C provides a variety of built-in data types that are used to define variables. These data types define the size and format of data that can be stored.
+
+### **Primary Data Types**
+
+| Data Type   | Memory (Bytes) | Range |
+|-------------|----------------|----------------------------------------------------|
+| `int`       | 4              | -2,147,483,648 to 2,147,483,647                    |
+| `char`      | 1              | -128 to 127 (signed) or 0 to 255 (unsigned)        |
+| `float`     | 4              | 1.2E-38 to 3.4E+38 (6 decimal places)              |
+| `double`    | 8              | 2.3E-308 to 1.7E+308 (15 decimal places)           |
+| `void`      | 0              | Represents no value (used mainly for functions)     |
+| `_Bool`     | 1              | Stores 0 (false) or 1 (true)                       |
+
+> [!NOTE]
+> Most operating systems provide additional, non-standard data types beyond the basic ones. However, these types are often not portable across different platforms. To ensure cross-platform compatibility, it is important to refer to the documentation of your operating system's standard library or consult stdint.h for standardized data types. This will help you write more portable and maintainable code.
+
+
+### **Derived Data Types**
+Derived types are constructed from the primary types:
+
+- **Arrays**: Collection of elements of the same type.
+- **Pointers**: Hold memory addresses of other variables.
+- **Structures**: Group of different types.
+- **Unions**: Similar to structures, but all members share the same memory location.
+- **Enums**: Enumerated types, used for named integer constants.
+
+### **Qualifiers**
+- **`const`**: Prevents modification of the variable after initialization.
+- **`volatile`**: Indicates that the value of the variable can be changed unexpectedly (e.g., by hardware).
+- **`restrict`**: Allows more aggressive optimizations by the compiler (for pointers).
+
+### **Integer Data Types**
+
+| Data Type        | Size (Bytes) | Range                                   |
+|------------------|--------------|-----------------------------------------|
+| `short int`      | 2            | -32,768 to 32,767                       |
+| `unsigned int`   | 4            | 0 to 4,294,967,295                      |
+| `long int`       | 8            | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 |
+| `long long int`  | 8            | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 |
+
+### **Floating Point Data Types**
+
+| Data Type        | Size (Bytes) | Range                                     |
+|------------------|--------------|-------------------------------------------|
+| `float`          | 4            | 1.2E-38 to 3.4E+38                        |
+| `double`         | 8            | 2.3E-308 to 1.7E+308                      |
+| `long double`    | 10 or 16     | More precision than `double`, implementation-dependent |
+
+---
+
+##  **Arithmetic Operators in C**
+
+C provides a wide range of operators to perform basic arithmetic operations. These operators can be applied to numerical values to perform operations like addition, subtraction, multiplication, etc.
+
+
+| Operator | Operation                   | Example       | Explanation                 |
+|----------|-----------------------------|---------------|-----------------------------|
+| `+`      | Addition                    | `a + b`       | Adds `a` and `b`            |
+| `-`      | Subtraction                 | `a - b`       | Subtracts `b` from `a`      |
+| `*`      | Multiplication              | `a * b`       | Multiplies `a` and `b`      |
+| `/`      | Division                    | `a / b`       | Divides `a` by `b`          |
+| `%`      | Modulus (Remainder)         | `a % b`       | Remainder when `a` is divided by `b` |
+| `++`     | Increment                   | `++a` or `a++`| Increments value of `a` by 1|
+| `--`     | Decrement                   | `--a` or `a--`| Decrements value of `a` by 1|
+
+### **Increment and Decrement Operators**
+
+- **Pre-increment (`++a`)**: Increments `a` first, then uses the new value in an expression.
+- **Post-increment (`a++`)**: Uses the current value of `a` in an expression, then increments `a`.
+
+The same applies to the decrement operator (`--a` and `a--`).
+
+**Example:**
+```c
+int a = 5;
+int b = ++a; // a becomes 6, then b gets the value 6
+int c = a++; // c gets 6, then a becomes 7
+```
+
+### **Operator Precedence and Associativity**
+
+Precedence determines the order in which operators are evaluated in expressions. Associativity determines the direction of evaluation when operators have the same precedence.
+
+- **Precedence**: Higher precedence operators are evaluated first.
+- **Associativity**: Defines the order of operations when operators have the same precedence.
+
+#### Precedence Table:
+
+| Operators                 | Description                  | Associativity |
+|---------------------------|------------------------------|---------------|
+| `*`, `/`, `%`              | Multiplication, division, modulus | Left-to-right |
+| `+`, `-`                   | Addition, subtraction         | Left-to-right |
+| `++`, `--`                 | Increment, decrement          | Right-to-left |
+
+**Example:**
+```c
+int result = 10 + 5 * 3; // 5 * 3 is done first, then 10 is added
+```
+
+### **Integer Division**
+
+In C, if both operands of the division operator `/` are integers, the result will be an integer (fractional part discarded).
+
+**Example:**
+```c
+int a = 5, b = 2;
+int result = a / b; // Result is 2, not 2.5
+```
+
+To get a floating-point result, at least one operand must be a floating-point type.
+
+**Example:**
+```c
+float result = (float)a / b; // Result is 2.5
+```
+
+---
+
+## Best Practices
+
+1. **Use Descriptive Variable Names**: Always name variables in a way that reflects their purpose.
+2. **Initialize Variables**: Always initialize variables to avoid undefined behavior.
+3. **Use Appropriate Data Types**: Use the smallest data type that can fit the data to optimize memory usage.
+4. **Be Mindful of Integer Division**: If you want to retain the fractional part, cast one operand to a floating-point type.
+
+---
+
+## Summary
+
+In C programming, a variable is a named storage location in memory that must be declared before use, specifying its data type and, optionally, an initial value. There are three main types of variables: local (accessible only within a function), global (accessible throughout the program), and static (retain their value between function calls). C supports various data types, including primary types (e.g., int, char, float, double) and derived types (e.g., arrays, pointers, structures).
+
+C provides a set of arithmetic operators for basic calculations, and understanding operator precedence is crucial for correct evaluations. To ensure effective coding, best practices include using descriptive variable names, initializing variables, selecting appropriate data types, and being cautious with integer division.

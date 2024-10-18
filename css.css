@@ -1,0 +1,236 @@
+:root
+{--cereus-dark: #232323;--cereus-darker: #1B1B1B;--cereus-light: #FAFAFA;}
+
+		@font-face
+		{font-family: 'URWGothicDemi';
+		src: url('https://github.com/ArtifexSoftware/urw-base35-fonts/raw/master/fonts/URWGothic-Demi.ttf') format('truetype');}
+
+		.gothic-text
+		{font-family: 'URWGothicDemi', sans-serif;font-size: 36px;font-weight: bold;
+		border:hidden;}
+
+		.gothic-text td, .gothic-text th
+		{border: none;}
+
+/* --- Navbar --- */ 
+nav
+{width: 100%;min-height: 10vh;display:flex;justify-content: space-between;
+align-items: center;background-color: var(--cereus-dark);}
+nav img
+{padding-left: 4vh;transition: 0.6s;}
+nav img:hover
+{transform: scale(1.08);}
+.navbar
+{flex: 1;text-align: left;}
+.navbar ul li
+{display: inline-block;list-style: none;padding: 2px;margin-left: 20px;}
+.navbar ul li a
+{text-decoration: none;font-weight: bold;padding: 5px 15px;color: #f2f2f2;border-radius:
+20px;transition: 0.4s;}
+.navbar ul li a:hover
+{background-color: #43a64f;color: #29382a;transform: scale(1.04);
+box-shadow: 0px 0px 30px rgba(10, 10 ,10 ,0.2);}
+.navbar >li
+{float:right;}
+.navbar li ul
+{display:none;position:absolute;min-width:120px;}
+.navbar li > ul
+{transition: 0.6s;}
+.navbar li:hover > ul
+{display:block;left: 6%;margin-top: 6px;padding: 4vh 4vh 4vh 2vh;background: var(--cereus-dark);
+border-radius: 16px;}
+
+/* ---  --- */ 
+.header
+{width: 100%;min-height: 90vh;background: #43A64F;background-position: center;background-size: cover;}
+
+.weltext
+{position: absolute;top: 41%;left: 15%;width: 50%;color: #29382a;flex-direction: column;}
+.weltext h1
+{font-size: 42px;font-weight: bold;color: #1d381f;transition: 0.6s;}
+.weltext h1:hover
+{text-shadow: 0px 0px 40px rgba(10, 10, 10, 0.4);transform: scale(1.02);}
+.weltext p
+{margin-top: 20px;margin-bottom: 30px;font-size: 20px;}
+.weltext a
+{position: relative;display: inline-block;text-decoration: none;border-radius: 20px;
+font-size: 20px;font-weight: bold;padding: 8px 25px;background-color: var(--cereus-dark);
+color: #f2f2f2;transition: 0.6s;}
+
+
+.dynabanner
+{position: relative;top: 41%;left: 15%;width: 70%;color: #29382a;}
+.dynabanner h1
+{font-size: 42px;font-weight: bold;color: #1d381f;transition: 0.6s;}
+.dynabanner h1:hover
+{text-shadow: 0px 0px 40px rgba(10, 10, 10, 0.4);transform: scale(1.02);}
+.dynabanner p
+{margin-top: 20px;margin-bottom: 30px;font-size: 40px;}
+
+.wiki_container
+{display: flex;width: 100%;}
+
+.wiki_content 
+{width: 100%; right: 20px; padding: 32px}
+.main_wiki_content 
+{width: 75%;}
+
+.dload a:hover
+{box-shadow: 0px 0px 20px rgba(10, 10, 10, 0.2);transform: scale(1.02);}
+.dload a
+{position: absolute;display: inline-block;text-decoration: none;left: 40%;border-radius: 20px;
+font-size: 20px;font-weight: bold;padding: 8px 25px;background-color: #43a64f;
+color: #f2f2f2;transition: 0.6s;}
+
+
+/*Vertical*/
+@media only screen and (max-aspect-ratio: 1/1), only screen and (aspect-ratio: 1/1)
+{
+body
+{overflow-x: hidden;}
+.features
+{color: #1d381f;display: flex;text-align:
+center;justify-content: space-between;flex-direction: column;}
+.features li
+{list-style-type: none;border-radius: 30px;margin-bottom: 20px;
+box-sizing: border-box;background: #43A64F;background-position: center;
+background-size: cover;transition: 0.6s;}
+.features li:hover
+{box-shadow: 0px 0px 30px rgba(67, 166 ,79, 0.32);transform: scale(1.02);}
+.features img
+{width: 160px;}
+.features p
+{padding-top: 2vh;font-size: 24px;font-weight: 400;}
+
+.selogo
+{width: 30%; margin: 15% 0 0 15%;}
+.dynabanner a
+{position: relative;display: inline-block;text-decoration: none;border-radius: 20px;
+font-size: 20px;font-weight: bold;padding: 8px 25px;background-color: var(--cereus-dark);
+color: #f2f2f2;transition: 0.6s; width: 100%; left:-10%}
+.dynabanner img
+{width:60%}
+.depic img
+{width:100%}
+}
+
+/*Horizontal*/
+@media only screen and (min-aspect-ratio: 1/1)
+{
+.features
+{color: #1d381f;min-height: 30%;display: flex;text-align:
+center;justify-content: space-between;margin: 5% 0%;margin-top: 2%; flex-direction: row;}
+
+.features li
+{list-style-type: none;flex-basis: 32%;border-radius: 30px;margin: 2px 10px;padding: 20px 6px;
+box-sizing: border-box;background: #43A64F;background-position: center;
+background-size: cover;transition: 0.6s;}
+.features li:hover
+{box-shadow: 0px 0px 30px rgba(67, 166 ,79, 0.32);transform: scale(1.02);}
+.features img
+{width: 160px;}
+.selogo
+{width: 30%; margin: 15% 0 0 60%;}
+.dynabanner a
+{position: relative;display: inline-block;text-decoration: none;border-radius: 20px;
+font-size: 20px;font-weight: bold;padding: 8px 25px;background-color: var(--cereus-dark);
+color: #f2f2f2;transition: 0.6s;}
+.dynabanner img
+{width:30%}
+.depic img
+{width:100%}
+}
+
+.contenido
+{width: 90%;margin: auto;}
+.intro-contenido
+{text-align: center;padding: 6vh 0vh;}
+.intro-contenido h1
+{font-size: 26px;transition: 0.4s;}
+.intro-contenido h1:hover
+{text-shadow: 0px 0px 20px rgba(67, 166 ,79 , 0.32);transform: scale(1.034);}
+.intro-contenido p
+{padding-top: 2vh;font-size: 18px;font-weight: 400;}
+
+
+.features h3
+{padding-top: 10px;}
+
+.features p
+{padding: 10px 0px;}
+.features a
+{color:  #1d381f;font-weight: bold;text-decoration: none;}
+
+.features-desk h3
+{padding-top: 10px;color: #FAFAFA;}
+.features-desk p
+{padding: 10px 0px; color: #FAFAFA;}
+/* --- cards --- */
+
+
+/* --- Footer --- */  
+ .footer
+ {width: 100%;min-height: 10vh;text-align: center;background-color: var(--cereus-dark);color: #f2f2f2;}
+.footer h2
+{padding-top: 4vh;padding-bottom: 2vh;text-align: center;color: #f2f2f2;}
+.footer h5
+{padding: 2vh 0vh;}
+.footer h6
+{padding: 2vh 0vh;padding-bottom: 4vh;}
+
+/* --- Downloads --- */
+.pictures
+{width: 95%;margin: auto;}
+
+.versions h1
+{font-size: 28px;padding-top: 4vh;transition: 0.4s;}
+.versions h1:hover
+{text-shadow: 0px 0px 40px rgba(67, 166 ,79 , 0.32);transform: scale(1.04);}
+.versions p
+{padding-top: 2vh;padding-bottom: 8vh;font-size: 16px;font-weight: 400;}
+.intro-pictures
+{min-height: 10vh;text-align: center;padding: 6vh 0vh;}
+
+.intro-pictures h1
+{font-size: 24px;transition: 0.4s;}
+.intro-pictures h1:hover
+{text-shadow: 0px 0px 20px rgba(67, 166 ,79 , 0.32);transform: scale(1.034);}
+.intro-pictures p
+{padding-top: 2vh;font-size: 16px;font-weight: 400;}
+
+
+.logo
+{position: relative;margin-bottom: -11%;left: 22%;height: 10%;width: 10%;border-radius: 100%;}
+
+.versions
+{position: relative;top: 50%;text-align: center;}
+.versions img
+{width: 68%;height: 68%;margin-bottom: 4vh;border-radius: 40px;cursor: pointer;transition: 0.6s;}
+.versions img:hover
+{box-shadow: 0px 0px 40px rgba(67, 166 ,79, 0.32);transform: scale(1.05);}
+
+.wikilist
+{width: 75%;height:100vh; overflow: hidden; background-color: #1b1b1b;padding: 10x;border-radius: 16px;text-align: left;}
+
+
+.dwn:hover
+{transform: scale(1.1);}
+/* Theme Switcher */
+@media (prefers-color-scheme: dark)
+{
+	body
+	{background-color: var(--cereus-dark);color: #f2f2f2; scroll-behavior: smooth;}
+	.footer
+	{background-color: #1b1b1b;}
+	.intro-contenido h1:hover
+	{text-shadow: 0px 0px 20px rgba(46, 70, 49, 0.4);transform: scale(1.034);}
+}
+@media (prefers-color-scheme: light)
+{
+	body
+	{background-color: #232323;color: var(--cereus-dark);}
+	.footer
+	{background-color: var(--cereus-dark);} 
+	.intro-contenido h1:hover
+	{text-shadow: 0px 0px 20px rgba(67, 166 ,79 , 0.32);transform: scale(1.034);}
+}
