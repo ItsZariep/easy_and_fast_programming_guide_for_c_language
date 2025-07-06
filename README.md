@@ -1,1 +1,0 @@
-https://itzselenux.github.io/easy_and_fast_programming_guide_for_c_language/

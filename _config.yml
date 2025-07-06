@@ -1,0 +1,53 @@
+title: Easy and fast Programming guide For C
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Tessera example webpage
+baseurl: ""
+url: ""
+github_username: itszariep
+permalink: /:title
+
+# Build settings
+remote_theme: itszariep/tessera
+
+social_links:
+  - name: GitHub
+    url: https://github.com/itszariep
+    icon: github
+
+plugins:
+  - jekyll-paginate
+
+collections:
+  chapters:
+    output: true
+    permalink: /:collection/:name/
+
+paginate: 12
+paginate_path: "/page:num/"
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      image: /preview.jpg
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      author: "ItsZariep"
+      image: /preview.jpg
+  -
+    scope:
+      path: ""
+      type: "chapters"
+    values:
+      author: "ItsZariep"
+      layout: post
+      image: /preview.jpg
+
+
+date_format: "%d/%m/%Y"

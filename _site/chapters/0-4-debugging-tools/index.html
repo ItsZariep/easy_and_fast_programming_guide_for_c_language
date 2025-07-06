@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="alternate" type="application/rss+xml" title="Easy and fast Programming guide For C" href="/feed.xml">
+
+	<meta property="og:site_name" content="Easy and fast Programming guide For C" />
+	<meta property="og:title" content="0.4 - Debugging tools" />
+	<meta property="og:image" content="http://localhost:4000/preview.jpg" />
+	<meta property="og:description" content="Debugging is a critical skill for any C programmer. It’s the process of finding and fixing errors or bugs in the code, and since C allows low-level..." />
+	<meta property="og:url" content="http://localhost:4000/chapters/0-4-debugging-tools/" />
+	<meta property="og:type" content="website" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="0.4 - Debugging tools" />
+	<meta name="twitter:description" content="Debugging is a critical skill for any C programmer. It’s the process of finding and fixing errors or bugs in the code, and since C allows low-level..." />
+	<meta name="twitter:image" content="http://localhost:4000/preview.jpg" />
+	
+	<meta name="jk:jekylltheme" content="ItsZariep/Tessera" />
+	
+	<title>0.4 - Debugging tools | Easy and fast Programming guide For C</title>
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="/assets/css/custom.css">
+
+	<link rel="icon" href="/favicon.ico">
+</head>
+
+<body>
+		<!-- Top Pane (Navbar?) -->
+
+<div class="toppanel">
+		<!-- Left side of the pane, usually only has a title or logo -->
+	<div class="tp-left">
+	<a href="/"><img class="tp-banner" src="/assets/img/banner.svg" width="100%" /></a>
+		<!--<h1>Easy and fast Programming guide For C</h1> -->
+	</div>
+
+	<!-- Burger menu using checkbox hack (for mobile, without using JS) -->
+	<input type="checkbox" id="burger-toggle" class="burger-checkbox">
+	<label for="burger-toggle" class="burger-menu">
+		<span></span>
+		<span></span>
+		<span></span>
+	</label>
+
+	<!-- Right side of the pane, usually has the navigation buttons, this example also has sub-elements -->
+	<div class="tp-right" id="mobile-menu">
+		<ul class="tp-nav">
+			<li><a href="/">Home</a></li>
+			<li><a href="/about/about">About</a></li>
+		</ul>
+	</div>
+</div>
+
+	<main>
+		<div id="main-container">
+	<!-- Right Pane -->
+
+<!-- You can remove or replace any section if required, copying _includes/rightpane.html on your page -->
+
+<div id="left-container">
+
+<!-- Banner Image or title-->
+<!-- This image is displayed at the top of the right pane. -->
+
+	<div class="rp-banner" >
+	<a href="/"><img width="90%" src="/assets/img/banner-c2.svg" /></a>
+	</div>
+<!--	<h1 class="rp-banner">Easy and fast Programming guide For C</h1>-->
+
+	<!-- Search Form -->
+	<!-- A simple GET form that allows users to perform a search query. -->
+	<!-- The search input is sent to the '/search' route. -->
+<!--
+		<div id="search-container" data-baseurl=""  class="search-box">
+	<input type="text" class="search-input" placeholder="Search...">
+	<ul class="search-results"></ul>
+</div>
+<script src="/assets/js/search.js"></script>
+-->
+	<!-- Entries Section -->
+	<!-- Displays a list of recent blog posts. -->
+<!--
+	<h2>Pages</h2>
+-->
+
+	
+	
+
+	<div class="postlist">
+		<ul>
+			
+			<li>
+				<strong></strong>
+				<ul>
+				
+					<li><a href="/chapters/0-intro/">Intro</a></li>
+				
+				</ul>
+			</li>
+			
+			<li>
+				<strong>0 - Prepare your system</strong>
+				<ul>
+				
+					<li><a href="/chapters/0-1-install-and-configure-an-ide/">0.1 - Installing an IDE</a></li>
+				
+					<li><a href="/chapters/0-2-install-and-configure-a-compiler/">0.2 - Install and configure a compiler</a></li>
+				
+					<li><a href="/chapters/0-3-learn-how-to-use-a-make-system/">0.3 - Learn how to use a build system</a></li>
+				
+					<li><a href="/chapters/0-4-debugging-tools/">0.4 - Debugging tools</a></li>
+				
+				</ul>
+			</li>
+			
+			<li>
+				<strong>1 - Getting started</strong>
+				<ul>
+				
+					<li><a href="/chapters/1-1-variables-data-types-and-arithmetic-operators/">1.1 - Variables, data types, and arithmetic operators</a></li>
+				
+					<li><a href="/chapters/1-2-basic-control-structure/">1.2 - Basic control structure</a></li>
+				
+					<li><a href="/chapters/1-3-compiler-directives/">1.3 - Compiler directives</a></li>
+				
+				</ul>
+			</li>
+			
+			<li>
+				<strong>2 - First Programs</strong>
+				<ul>
+				
+					<li><a href="/chapters/2-1-hello-world-in-c/">2.1 - Hello world in C</a></li>
+				
+					<li><a href="/chapters/2-2-complicating-the-hello-world/">2.2 - Complicating the Hello World</a></li>
+				
+				</ul>
+			</li>
+			
+			<li>
+				<strong>3 - Basic functions and data structures</strong>
+				<ul>
+				
+					<li><a href="/chapters/3-1-using-data-types/">3.1 - Using data types</a></li>
+				
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+	<!-- Tags -->
+<div class="post">
+	<div class="post-postcategories">
+		<h3>
+		
+		</h3>
+	</div>
+
+	<div class="post-posttitle">
+		<h1>0.4 - Debugging tools</h1>
+	</div>
+
+	<div class="post-postdate">
+		<h3></h3>
+	</div>
+
+	<div class="post-postcontent">
+	<div class="post-img">
+		
+			<img src="/preview.jpg" alt="0.4 - Debugging tools" />
+		
+	</div>
+
+	<p>Debugging is a critical skill for any C programmer. It’s the process of finding and fixing errors or bugs in the code, and since C allows low-level memory access, the debugging process can be more complex compared to higher-level languages.</p>
+
+<p>This guide provides a deep dive into the most widely used debugging tools for C programming, categorized by their purposes such as interactive debugging, static analysis, memory debugging, and more.</p>
+
+<hr />
+
+<h2 id="interactive-debugging-tools"><strong>Interactive Debugging Tools</strong></h2>
+
+<h3 id="gdb-gnu-debugger"><strong>GDB (GNU Debugger)</strong></h3>
+<p>GDB is the most popular debugger for C and other languages like C++ and Fortran. It allows programmers to observe their program while it runs or inspect the program state after a crash.</p>
+
+<p><strong>Key Features:</strong></p>
+<ul>
+  <li>Set breakpoints to pause execution at a specific point.</li>
+  <li>Step through the code line by line or function by function.</li>
+  <li>Inspect variables, memory, registers, and call stacks.</li>
+  <li>Change variable values during runtime to experiment with fixes.</li>
+  <li>Core dump analysis: Analyze crash dumps to see what caused a program failure.</li>
+</ul>
+
+<p><strong>Basic Commands:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gdb ./program   <span class="c"># Start debugging a program</span>
+run             <span class="c"># Run the program inside GDB</span>
+<span class="nb">break </span>main      <span class="c"># Set a breakpoint at the beginning of the program</span>
+step            <span class="c"># Step into the next line of code</span>
+next            <span class="c"># Step over to the next line (skip over function calls)</span>
+print var       <span class="c"># Print the value of a variable 'var'</span>
+<span class="k">continue</span>        <span class="c"># Resume execution until the next breakpoint</span>
+backtrace       <span class="c"># Display the call stack</span>
+</code></pre></div></div>
+
+<h3 id="lldb-llvm-debugger"><strong>LLDB (LLVM Debugger)</strong></h3>
+<p>LLDB is the default debugger for the LLVM toolchain, which works with Clang (a modern C compiler). It is known for its performance and modern features compared to GDB.</p>
+
+<p><strong>Key Features:</strong></p>
+<ul>
+  <li>Fast startup and low memory footprint.</li>
+  <li>Supports multi-threaded debugging.</li>
+  <li>Modular architecture allowing for better integration with IDEs (such as Xcode and Visual Studio Code).</li>
+</ul>
+
+<p><strong>Basic Commands:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lldb ./program
+breakpoint <span class="nb">set</span> <span class="nt">--name</span> main  <span class="c"># Set a breakpoint at the 'main' function</span>
+run                         <span class="c"># Run the program</span>
+step                        <span class="c"># Step into the next line</span>
+next                        <span class="c"># Move to the next instruction</span>
+frame variable var_name      <span class="c"># View the contents of a variable in the current frame</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="static-code-analysis-tools"><strong>Static Code Analysis Tools</strong></h2>
+
+<p>Static code analysis tools help in identifying issues like potential bugs, undefined behavior, and security vulnerabilities without executing the program.</p>
+
+<h3 id="gcc-and-clang-static-analyzer"><strong>GCC and Clang Static Analyzer</strong></h3>
+<p>Both GCC and Clang provide built-in static analyzers that check for common issues such as out-of-bounds access, uninitialized variables, and memory leaks during compilation.</p>
+
+<ul>
+  <li><strong>Clang Static Analyzer:</strong>
+Use the <code class="language-plaintext highlighter-rouge">scan-build</code> command to analyze your project:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scan-build gcc <span class="nt">-o</span> program program.c
+</code></pre></div>    </div>
+    <p>This command generates reports showing potential issues in the code.</p>
+  </li>
+  <li><strong>GCC Static Analyzer:</strong>
+Use the <code class="language-plaintext highlighter-rouge">-fanalyzer</code> option with GCC:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc <span class="nt">-fanalyzer</span> <span class="nt">-o</span> program program.c
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="-cppcheck">** Cppcheck**</h3>
+<p>Cppcheck is a widely-used open-source static analysis tool specifically for C/C++. It focuses on finding undefined behavior, memory leaks, and potential bugs in the code without generating false positives.</p>
+
+<p><strong>Usage Example:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cppcheck <span class="nt">--enable</span><span class="o">=</span>all program.c
+</code></pre></div></div>
+
+<p>Cppcheck produces detailed reports with recommendations to fix any issues it detects.</p>
+
+<hr />
+
+<h2 id="memory-debugging-tools"><strong>Memory Debugging Tools</strong></h2>
+
+<p>Memory management bugs (e.g., buffer overflows, memory leaks, and illegal memory access) are common in C programming. These tools help detect and diagnose memory-related issues.</p>
+
+<h3 id="valgrind"><strong>Valgrind</strong></h3>
+<p>Valgrind is a popular framework used to track memory-related bugs. It includes several tools, the most notable being <code class="language-plaintext highlighter-rouge">Memcheck</code>, which detects memory leaks, invalid memory access, and memory corruption.</p>
+
+<p><strong>Key Features:</strong></p>
+<ul>
+  <li>Detects uninitialized memory access.</li>
+  <li>Finds improper memory allocation and freeing (use-after-free, double-free, etc.).</li>
+  <li>Tracks memory leaks (allocated but not freed memory).</li>
+</ul>
+
+<p><strong>Basic Usage:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>valgrind <span class="nt">--leak-check</span><span class="o">=</span>full ./program
+</code></pre></div></div>
+<p>Valgrind will report issues like uninitialized reads, invalid writes, and memory leaks with specific details.</p>
+
+<h3 id="addresssanitizer-asan"><strong>AddressSanitizer (ASan)</strong></h3>
+<p>AddressSanitizer is a fast memory error detector. It is part of the GCC and Clang toolchains and is especially useful for detecting out-of-bounds access and use-after-free errors.</p>
+
+<p><strong>Usage:</strong>
+Compile the program with AddressSanitizer enabled:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc <span class="nt">-fsanitize</span><span class="o">=</span>address <span class="nt">-g</span> <span class="nt">-o</span> program program.c
+./program
+</code></pre></div></div>
+<p>AddressSanitizer will report memory violations as they happen during runtime, with clear messages pinpointing the error.</p>
+
+<hr />
+
+<h2 id="code-profiling-tools"><strong>Code Profiling Tools</strong></h2>
+
+<p>Profiling helps you optimize code by identifying performance bottlenecks, such as which functions are taking the most time or consuming the most memory.</p>
+
+<h3 id="gprof-gnu-profiler"><strong>Gprof (GNU Profiler)</strong></h3>
+<p>Gprof is a performance analysis tool that provides detailed information about the runtime behavior of a program.</p>
+
+<p><strong>Usage:</strong></p>
+<ol>
+  <li>Compile the program with profiling enabled:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc <span class="nt">-pg</span> <span class="nt">-o</span> program program.c
+</code></pre></div>    </div>
+  </li>
+  <li>Run the program:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./program
+</code></pre></div>    </div>
+  </li>
+  <li>Generate the profiling report:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gprof ./program gmon.out
+</code></pre></div>    </div>
+    <p>The report shows the time spent in each function, function call hierarchy, and overall performance statistics.</p>
+  </li>
+</ol>
+
+<h3 id="perf"><strong>Perf</strong></h3>
+<p><code class="language-plaintext highlighter-rouge">perf</code> is a powerful Linux profiling tool that collects performance data at various levels of the system. It can measure CPU cycles, cache misses, I/O operations, and much more.</p>
+
+<p><strong>Basic Usage:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>perf record ./program  <span class="c"># Run the program with performance monitoring</span>
+perf report            <span class="c"># View a detailed report</span>
+</code></pre></div></div>
+<p>Perf provides insights into CPU bottlenecks, function hotspots, and I/O performance.</p>
+
+<hr />
+
+<h2 id="ide-based-debugging-tools"><strong>IDE-Based Debugging Tools</strong></h2>
+
+<p>Many modern Integrated Development Environments (IDEs) come with built-in debugging support that integrates with GDB, LLDB, or other debuggers.</p>
+
+<h3 id="visual-studio-code-vscode"><strong>Visual Studio Code (VSCode)</strong></h3>
+<p>VSCode, along with extensions like <code class="language-plaintext highlighter-rouge">C/C++ by Microsoft</code>, offers an excellent debugging experience for C programs. It uses GDB or LLDB under the hood, but provides a graphical interface for setting breakpoints, inspecting variables, and stepping through code.</p>
+
+<p><strong>Key Features:</strong></p>
+<ul>
+  <li>Easy setup for debugging with <code class="language-plaintext highlighter-rouge">.vscode/launch.json</code> configuration.</li>
+  <li>Integrated variable watch windows and call stack visualization.</li>
+  <li>Cross-platform support for debugging.</li>
+</ul>
+
+<h3 id="clion"><strong>CLion</strong></h3>
+<p>CLion, a JetBrains IDE, has a fully integrated debugger powered by GDB or LLDB. It provides a user-friendly interface for breakpoint management, variable inspection, and memory debugging.</p>
+
+<p><strong>Key Features:</strong></p>
+<ul>
+  <li>Graphical interface for memory analysis.</li>
+  <li>Built-in static analysis tools for code quality.</li>
+  <li>Seamless integration with CMake projects.</li>
+</ul>
+
+<hr />
+
+<h2 id="unit-testing-and-debugging"><strong>Unit Testing and Debugging</strong></h2>
+
+<p>Unit testing is critical for verifying that individual functions work as expected. When combined with debugging, it makes fixing bugs faster.</p>
+
+<h3 id="cunit"><strong>CUnit</strong></h3>
+<p>CUnit is a lightweight framework for unit testing in C. It allows you to define test suites and test cases to validate the correctness of code segments.</p>
+
+<p><strong>Basic Example:</strong></p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;CUnit/CUnit.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;CUnit/Basic.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">test_function1</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">CU_ASSERT</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">);</span>  <span class="c1">// Example test</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">CU_initialize_registry</span><span class="p">();</span>
+    <span class="n">CU_pSuite</span> <span class="n">suite</span> <span class="o">=</span> <span class="n">CU_add_suite</span><span class="p">(</span><span class="s">"Suite_1"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">CU_add_test</span><span class="p">(</span><span class="n">suite</span><span class="p">,</span> <span class="s">"test of function1"</span><span class="p">,</span> <span class="n">test_function1</span><span class="p">);</span>
+    <span class="n">CU_basic_run_tests</span><span class="p">();</span>
+    <span class="n">CU_cleanup_registry</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="check"><strong>Check</strong></h3>
+<p>Check is another popular unit testing framework that provides better integration with memory debugging tools like Valgrind and AddressSanitizer.</p>
+
+<p><strong>Example:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc <span class="nt">-o</span> tests tests.c <span class="nt">-lcheck</span>
+./tests
+</code></pre></div></div>
+<p>Using Check in combination with memory debugging tools will help ensure that your tests do not cause memory leaks or illegal memory access.</p>
+
+<hr />
+
+<h2 id="advanced-debugging-techniques"><strong>Advanced Debugging Techniques</strong></h2>
+
+<h3 id="core-dump-analysis"><strong>Core Dump Analysis</strong></h3>
+<p>A core dump is a snapshot of a program’s memory when it crashes. Core dump analysis is useful for post-mortem debugging.</p>
+
+<p><strong>Enabling Core Dumps:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ulimit</span> <span class="nt">-c</span> unlimited
+</code></pre></div></div>
+
+<p><strong>Using GDB with Core Dumps:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gdb ./program core
+</code></pre></div></div>
+<p>GDB will load the core dump and allow you to analyze the state of the program at the time of the crash.</p>
+
+<h3 id="debugging-multi-threaded-programs"><strong>Debugging Multi-Threaded Programs</strong></h3>
+<p>Debugging multi-threaded programs can be tricky. GDB and LLDB both offer commands to inspect and manage threads.</p>
+
+<p><strong>GDB Thread Commands:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>info threads     <span class="c"># List all threads</span>
+thread 2         <span class="c"># Switch to thread 2</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="summary"><strong>Summary</strong></h3>
+
+<p>Debugging in C requires a good understanding of various tools and techniques. Mastering interactive debuggers like GDB and LLDB is essential, while static analyzers and memory debugging tools like Valgrind, AddressSanitizer, and Cppcheck help to catch bugs early. Code profiling tools like Gprof and Perf assist in optimizing performance.</p>
+
+<p>Combining these tools with good practices like unit testing ensures robust, efficient, and error-free C programs.</p>
+
+<p>By mastering these tools you’ll have a solid foundation for diagnosing and resolving issues in C code effectively.</p>
+
+	</div>
+
+	<div class="post-postcategoriesbottom">
+		<h3>
+		
+		</h3>
+	<a href="#scrolltotop" class="scrolltotop"></a>
+	</div>
+
+	<hr class="endseparator">
+		<!--Your personal box at the end of each post-->
+
+<div class="userbox">
+	<img class="userpic" src="/assets/img/authors/ItsZariep.webp" alt="Avatar">
+	<div class="userbox-content">
+		<h1>ItsZariep</h1>
+	</div>
+</div>
+<br>
+		<div class="btnshare">
+	<input type="checkbox" id="toggleshare" />
+	<label for="toggleshare">Share this page</label>
+	<input class="urlshare" type="text" readonly value="http://localhost:4000/chapters/0-4-debugging-tools/" />
+</div>
+
+		
+</div>
+		<!-- User box and comments are included on postcontent.html-->
+	
+
+</div>
+
+	</main>
+		<!-- Bottom Pane (Footer?) -->
+
+<!-- You can remove or replace any section if required, copying _includes/bottompane.html on your page -->
+
+<div class="bottompane">
+	<div class="bp-left">
+		<p>&copy; 2025 Easy and fast Programming guide For C</p>
+	</div>
+	<div class="bp-right">
+		<p>Powered by <a href="https://github.com/itszariep/tessera">Tessera</a> for Jekyll</p>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- Post grid, it includes the logic of displaying post on main.
+	Edit your _config.yml to configure entries per page, example:
+		paginate: 9
+		paginate_path: "/page:num/"
+ -->
+
+
+<div id="posts-container">
+<img width="60%" src="{{ '/assets/img/banner-c2.svg' | relative_url }}" />
+	<h1>Book Sections</h1>
+	<div class="postlist">
+	{% assign sorted = site.chapters | sort: "order" %}
+	{% assign grouped = sorted | group_by: "section" %}
+		<ul>
+			{% for section in grouped %}
+			<li>
+				<strong>{{ section.name }}</strong>
+				<ul>
+				{% for chapter in section.items %}
+					<li><a href="{{ chapter.url }}">{{ chapter.title }}</a></li>
+				{% endfor %}
+				</ul>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
