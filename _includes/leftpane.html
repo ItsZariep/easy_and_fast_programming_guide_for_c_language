@@ -15,9 +15,9 @@
 	<!-- Search Form -->
 	<!-- A simple GET form that allows users to perform a search query. -->
 	<!-- The search input is sent to the '/search' route. -->
-<!--
+
 		{% include searchbar.html %}
--->
+
 	<!-- Entries Section -->
 	<!-- Displays a list of recent blog posts. -->
 <!--
@@ -34,7 +34,7 @@
 				<strong>{{ section.name }}</strong>
 				<ul>
 				{% for chapter in section.items %}
-					<li><a href="{{ chapter.url }}">{{ chapter.title }}</a></li>
+					<li><a href="{{ chapter.url | relative_url }}">{{ chapter.title }}</a></li>
 				{% endfor %}
 				</ul>
 			</li>

@@ -13,4 +13,4 @@ C17 (also known as ISO/IEC 9899:2018) is a minor revision of the C programming l
 
 Therefore, is important to use a moden compiler before following this document or some aspects din't work correctly.
 
-> ISO/IEC 9899:2018. (n.d.). ISO. https://www.iso.org/standard/74528.html
+> ISO/IEC 9899:2018. (n.d.). ISO. [https://www.iso.org/standard/74528.html](https://www.iso.org/standard/74528.html)

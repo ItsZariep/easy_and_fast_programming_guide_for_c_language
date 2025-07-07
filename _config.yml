@@ -9,6 +9,7 @@ permalink: /:title
 
 # Build settings
 remote_theme: itszariep/tessera
+#theme: tessera-jekyll-theme
 
 social_links:
   - name: GitHub
@@ -18,7 +19,7 @@ social_links:
 collections:
   chapters:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:name/
 
 defaults:
   -

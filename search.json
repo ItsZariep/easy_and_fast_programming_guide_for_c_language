@@ -2,12 +2,12 @@
 layout: null
 ---
 [
-	{% for post in site.posts %}
+	{% for chapter in site.chapters %}
 		{
-			"title": "{{ post.title | escape }}",
-			"url": "{{ post.url | relative_url }}",
-			"date": "{{ post.date | date: "%B %-d, %Y" }}",
-			"content": "{{ post.content | strip_html | strip_newlines | escape }}"
+			"title": "{{ chapter.title | escape }}",
+			"content": "{{ chapter.section | escape }}",
+			"url": "{{ chapter.url | relative_url }}",
+			"order": "{{ chapter.order }}"
 		}{% unless forloop.last %},{% endunless %}
 	{% endfor %}
 ]
