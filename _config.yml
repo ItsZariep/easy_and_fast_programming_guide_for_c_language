@@ -3,7 +3,8 @@ email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is a project designed to explain a programming language in a straightforward and accessible manner, especially for beginners.
 baseurl: "/easy_and_fast_programming_guide_for_c_language"
-url: ""
+url: "https://itszariep.github.io"
+
 github_username: itszariep
 permalink: /:title
 
