@@ -1,0 +1,55 @@
+/* Page breaks */
+.page-break {
+	page-break-after: always;
+	page-break-inside: avoid;
+}
+
+/* Ensure chapters and sections start on new pages */
+h1, h2 {
+	page-break-before: always;
+}
+
+/* Prevent orphaned content */
+p, div {
+	orphans: 3;
+	widows: 3;
+}
+
+/* General page break handling for common elements */
+h1, h2, h3, h4, h5, h6,
+p, table, ul, ol, blockquote, pre, hr {
+	page-break-before: auto;
+	page-break-after: auto;
+	page-break-inside: avoid;
+}
+
+/* Base styles */
+body {
+	font-family: "Liberation Sans";
+	font-size: 9pt;
+	margin: 2em;
+}
+
+.meta {
+	color: #666;
+	font-size: 0.9em;
+	margin-bottom: 1em;
+}
+
+pre {
+	background-color: #eee;
+}
+
+thead, table{
+	background-color: #eee;
+}
+.odd td {
+	background-color: #ddd;
+}
+
+blockquote > p {
+	border-left: 4px solid #aaa;
+	background-color: #eee;
+	border-radius: 6px;
+	padding: 0 1rem 0 1rem;
+}
